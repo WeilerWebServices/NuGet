@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5650D11-E679-4FFA-BC2E-A9F29DD01768}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nuget.PackageIndex</RootNamespace>
+    <AssemblyName>Nuget.PackageIndex</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OutputPath>..\..\artifacts\bin\$(AssemblyName)\$(Configuration)\</OutputPath>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\FinalPublicKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>..\..\references\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Client">
+      <HintPath>..\..\references\NuGet.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.ContentModel">
+      <HintPath>..\..\references\NuGet.ContentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Frameworks">
+      <HintPath>..\..\references\NuGet.Frameworks.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Packaging">
+      <HintPath>..\..\references\NuGet.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Packaging.Core">
+      <HintPath>..\..\references\NuGet.Packaging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Packaging.Core.Types">
+      <HintPath>..\..\references\NuGet.Packaging.Core.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Repositories">
+      <HintPath>..\..\references\NuGet.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.RuntimeModel">
+      <HintPath>..\..\references\NuGet.RuntimeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Versioning">
+      <HintPath>..\..\references\NuGet.Versioning.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.33.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Reflection.Metadata, Version=1.0.18.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstractions\FileSystem.cs" />
+    <Compile Include="Abstractions\NugetHelper.cs" />
+    <Compile Include="Abstractions\INugetHelper.cs" />
+    <Compile Include="Abstractions\IFileSystem.cs" />
+    <Compile Include="IIndexSettings.cs" />
+    <Compile Include="IndexSettings.cs" />
+    <Compile Include="Client\IAddPackageAnalyzer.cs" />
+    <Compile Include="Client\AddPackageAnalyzer.cs" />
+    <Compile Include="Client\IAddPackageAnalyzerFactory.cs" />
+    <Compile Include="Client\StringExtensions.cs" />
+    <Compile Include="Client\ISyntaxHelper.cs" />
+    <Compile Include="Client\IProjectMetadataProvider.cs" />
+    <Compile Include="Client\CodeFixes\IPackageInstaller.cs" />
+    <Compile Include="Client\CodeFixes\AddPackageOperation.cs" />
+    <Compile Include="Client\CodeFixes\AddPackageCodeAction.cs" />
+    <Compile Include="Client\CodeFixes\AddPackageCodeFixProviderBase.cs" />
+    <Compile Include="Client\ProjectMetadata.cs" />
+    <Compile Include="Client\TargetFrameworkMetadata.cs" />
+    <Compile Include="Client\TargetFrameworkHelper.cs" />
+    <Compile Include="Client\EnumerableExtensions.cs" />
+    <Compile Include="Client\SyntaxTokenExtensions.cs" />
+    <Compile Include="Engine\AllResultsCollector.cs" />
+    <Compile Include="Engine\IPackageSearchEngine.cs" />
+    <Compile Include="Engine\PackageIndexError.cs" />
+    <Compile Include="Engine\PackageSearchEngine.cs" />
+    <Compile Include="Models\IPackageIndexModelInfo.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="NupkgLocalPackageLoader.cs" />
+    <Compile Include="IPackageMetadata.cs" />
+    <Compile Include="ILocalPackageLoader.cs" />
+    <Compile Include="AssemblyMetadata.cs" />
+    <Compile Include="PackageMetadata.cs" />
+    <Compile Include="RoslynReflectorFactory.cs" />
+    <Compile Include="IReflectorFactory.cs" />
+    <Compile Include="Models\ExtensionInfo.cs" />
+    <Compile Include="Models\ModelHelpers.cs" />
+    <Compile Include="RoslynReflector.cs" />
+    <Compile Include="IReflector.cs" />
+    <Compile Include="ILocalPackageIndexBuilder.cs" />
+    <Compile Include="LocalPackageIndexBuilderResult.cs" />
+    <Compile Include="LocalPackageIndexBuilder.cs" />
+    <Compile Include="Logging\ILogProvider.cs" />
+    <Compile Include="Logging\LogFactory.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Models\ExtensionModel.cs" />
+    <Compile Include="Models\PackageInfo.cs" />
+    <Compile Include="Models\NamespaceInfo.cs" />
+    <Compile Include="Models\TypeInfo.cs" />
+    <Compile Include="Models\NamespaceModel.cs" />
+    <Compile Include="PackageIndexFactory.cs" />
+    <Compile Include="IPackageIndexFactory.cs" />
+    <Compile Include="IRemotePackageIndex.cs" />
+    <Compile Include="ILocalPackageIndex.cs" />
+    <Compile Include="PackageSearcher.cs" />
+    <Compile Include="IPackageSearcher.cs" />
+    <Compile Include="IPackageIndex.cs" />
+    <Compile Include="LocalPackageIndex.cs" />
+    <Compile Include="Logging\ILog.cs" />
+    <Compile Include="Logging\NullLogger.cs" />
+    <Compile Include="Models\IPackageIndexModel.cs" />
+    <Compile Include="Models\PackageModel.cs" />
+    <Compile Include="Models\TypeModel.cs" />
+    <Compile Include="LocalPackageIndexBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\FinalPublicKey.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <Exec Command="xcopy $(ProjectDir)$(OutputPath)$(AssemblyName).* $(ProjectDir)..\..\artifacts\signed\*.* /Y /R" />
+  </Target>
+</Project>

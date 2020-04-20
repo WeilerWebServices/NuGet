@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Internal Server Error";
+    Response.StatusCode = 500;
+}
+
+@ViewHelpers.ErrorPage(Url, Html, "500", "Internal Server Error", @<text>
+<p>An error occurred while processing your request. We really messed up this time...</p></text>, @<text>
+<p>We have logged the error and will look into it so that it doesn't happen again; however, if you keep seeing this page, please <a href="https://github.com/NuGet/NuGetGallery/issues">file a bug!</a></p></text>)

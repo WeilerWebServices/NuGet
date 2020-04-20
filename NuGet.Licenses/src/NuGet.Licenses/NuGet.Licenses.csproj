@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32B73452-3793-499B-A0AA-875E76F02E2D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NuGet.Licenses</RootNamespace>
+    <AssemblyName>NuGet.Licenses</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\LicenseController.cs" />
+    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Models\CompositeLicenseExpressionSegment.cs" />
+    <Compile Include="Models\CompositeLicenseExpressionSegmentType.cs" />
+    <Compile Include="Models\CompositeLicenseExpressionViewModel.cs" />
+    <Compile Include="Models\InvalidRequestModel.cs" />
+    <Compile Include="Models\SingleLicenseInformationModel.cs" />
+    <Compile Include="Models\UnknownLicenseModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.*.cs" />
+    <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\IFileService.cs" />
+    <Compile Include="Services\ILicenseExpressionSegmentator.cs" />
+    <Compile Include="Services\ILicensesFolderPathService.cs" />
+    <Compile Include="Services\LicenseExpressionSegmentator.cs" />
+    <Compile Include="Services\LicensesFolderPathService.cs" />
+    <Compile Include="Services\ILicenseFileService.cs" />
+    <Compile Include="Services\LicenseFileService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Licenses\389-exception.txt" />
+    <Content Include="App_Data\Licenses\AAL.txt" />
+    <Content Include="App_Data\Licenses\AFL-1.1.txt" />
+    <Content Include="App_Data\Licenses\AFL-1.2.txt" />
+    <Content Include="App_Data\Licenses\AFL-2.0.txt" />
+    <Content Include="App_Data\Licenses\AFL-2.1.txt" />
+    <Content Include="App_Data\Licenses\AFL-3.0.txt" />
+    <Content Include="App_Data\Licenses\AGPL-3.0-only.txt" />
+    <Content Include="App_Data\Licenses\AGPL-3.0-or-later.txt" />
+    <Content Include="App_Data\Licenses\Apache-1.0.txt" />
+    <Content Include="App_Data\Licenses\Apache-1.1.txt" />
+    <Content Include="App_Data\Licenses\Apache-2.0.txt" />
+    <Content Include="App_Data\Licenses\APL-1.0.txt" />
+    <Content Include="App_Data\Licenses\APSL-1.0.txt" />
+    <Content Include="App_Data\Licenses\APSL-1.1.txt" />
+    <Content Include="App_Data\Licenses\APSL-1.2.txt" />
+    <Content Include="App_Data\Licenses\APSL-2.0.txt" />
+    <Content Include="App_Data\Licenses\Artistic-1.0-cl8.txt" />
+    <Content Include="App_Data\Licenses\Artistic-1.0-Perl.txt" />
+    <Content Include="App_Data\Licenses\Artistic-1.0.txt" />
+    <Content Include="App_Data\Licenses\Artistic-2.0.txt" />
+    <Content Include="App_Data\Licenses\Autoconf-exception-2.0.txt" />
+    <Content Include="App_Data\Licenses\Autoconf-exception-3.0.txt" />
+    <Content Include="App_Data\Licenses\Bison-exception-2.2.txt" />
+    <Content Include="App_Data\Licenses\BitTorrent-1.1.txt" />
+    <Content Include="App_Data\Licenses\Bootloader-exception.txt" />
+    <Content Include="App_Data\Licenses\BSD-2-Clause-FreeBSD.txt" />
+    <Content Include="App_Data\Licenses\BSD-2-Clause-Patent.txt" />
+    <Content Include="App_Data\Licenses\BSD-2-Clause.txt" />
+    <Content Include="App_Data\Licenses\BSD-3-Clause-Clear.txt" />
+    <Content Include="App_Data\Licenses\BSD-3-Clause.txt" />
+    <Content Include="App_Data\Licenses\BSD-4-Clause.txt" />
+    <Content Include="App_Data\Licenses\BSL-1.0.txt" />
+    <Content Include="App_Data\Licenses\CATOSL-1.1.txt" />
+    <Content Include="App_Data\Licenses\CC-BY-4.0.txt" />
+    <Content Include="App_Data\Licenses\CC-BY-SA-4.0.txt" />
+    <Content Include="App_Data\Licenses\CC0-1.0.txt" />
+    <Content Include="App_Data\Licenses\CDDL-1.0.txt" />
+    <Content Include="App_Data\Licenses\CECILL-2.0.txt" />
+    <Content Include="App_Data\Licenses\CECILL-2.1.txt" />
+    <Content Include="App_Data\Licenses\CECILL-B.txt" />
+    <Content Include="App_Data\Licenses\CECILL-C.txt" />
+    <Content Include="App_Data\Licenses\ClArtistic.txt" />
+    <Content Include="App_Data\Licenses\Classpath-exception-2.0.txt" />
+    <Content Include="App_Data\Licenses\CLISP-exception-2.0.txt" />
+    <Content Include="App_Data\Licenses\CNRI-Python.txt" />
+    <Content Include="App_Data\Licenses\Condor-1.1.txt" />
+    <Content Include="App_Data\Licenses\CPAL-1.0.txt" />
+    <Content Include="App_Data\Licenses\CPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\CUA-OPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\DigiRule-FOSS-exception.txt" />
+    <Content Include="App_Data\Licenses\ECL-1.0.txt" />
+    <Content Include="App_Data\Licenses\ECL-2.0.txt" />
+    <Content Include="App_Data\Licenses\eCos-exception-2.0.txt" />
+    <Content Include="App_Data\Licenses\EFL-1.0.txt" />
+    <Content Include="App_Data\Licenses\EFL-2.0.txt" />
+    <Content Include="App_Data\Licenses\Entessa.txt" />
+    <Content Include="App_Data\Licenses\EPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\EPL-2.0.txt" />
+    <Content Include="App_Data\Licenses\EUDatagrid.txt" />
+    <Content Include="App_Data\Licenses\EUPL-1.1.txt" />
+    <Content Include="App_Data\Licenses\EUPL-1.2.txt" />
+    <Content Include="App_Data\Licenses\Fair.txt" />
+    <Content Include="App_Data\Licenses\Fawkes-Runtime-exception.txt" />
+    <Content Include="App_Data\Licenses\FLTK-exception.txt" />
+    <Content Include="App_Data\Licenses\Font-exception-2.0.txt" />
+    <Content Include="App_Data\Licenses\Frameworx-1.0.txt" />
+    <Content Include="App_Data\Licenses\freertos-exception-2.0.txt" />
+    <Content Include="App_Data\Licenses\FSFAP.txt" />
+    <Content Include="App_Data\Licenses\FTL.txt" />
+    <Content Include="App_Data\Licenses\GCC-exception-2.0.txt" />
+    <Content Include="App_Data\Licenses\GCC-exception-3.1.txt" />
+    <Content Include="App_Data\Licenses\GFDL-1.1-only.txt" />
+    <Content Include="App_Data\Licenses\GFDL-1.1-or-later.txt" />
+    <Content Include="App_Data\Licenses\GFDL-1.2-only.txt" />
+    <Content Include="App_Data\Licenses\GFDL-1.2-or-later.txt" />
+    <Content Include="App_Data\Licenses\GFDL-1.3-only.txt" />
+    <Content Include="App_Data\Licenses\GFDL-1.3-or-later.txt" />
+    <Content Include="App_Data\Licenses\gnu-javamail-exception.txt" />
+    <Content Include="App_Data\Licenses\gnuplot.txt" />
+    <Content Include="App_Data\Licenses\GPL-2.0-only.txt" />
+    <Content Include="App_Data\Licenses\GPL-2.0-or-later.txt" />
+    <Content Include="App_Data\Licenses\GPL-3.0-only.txt" />
+    <Content Include="App_Data\Licenses\GPL-3.0-or-later.txt" />
+    <Content Include="App_Data\Licenses\HPND.txt" />
+    <Content Include="App_Data\Licenses\i2p-gpl-java-exception.txt" />
+    <Content Include="App_Data\Licenses\IJG.txt" />
+    <Content Include="App_Data\Licenses\iMatix.txt" />
+    <Content Include="App_Data\Licenses\Imlib2.txt" />
+    <Content Include="App_Data\Licenses\Intel.txt" />
+    <Content Include="App_Data\Licenses\IPA.txt" />
+    <Content Include="App_Data\Licenses\IPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\ISC.txt" />
+    <Content Include="App_Data\Licenses\LGPL-2.0-only.txt" />
+    <Content Include="App_Data\Licenses\LGPL-2.0-or-later.txt" />
+    <Content Include="App_Data\Licenses\LGPL-2.1-only.txt" />
+    <Content Include="App_Data\Licenses\LGPL-2.1-or-later.txt" />
+    <Content Include="App_Data\Licenses\LGPL-3.0-only.txt" />
+    <Content Include="App_Data\Licenses\LGPL-3.0-or-later.txt" />
+    <Content Include="App_Data\Licenses\Libtool-exception.txt" />
+    <Content Include="App_Data\Licenses\LiLiQ-P-1.1.txt" />
+    <Content Include="App_Data\Licenses\LiLiQ-R-1.1.txt" />
+    <Content Include="App_Data\Licenses\LiLiQ-Rplus-1.1.txt" />
+    <Content Include="App_Data\Licenses\Linux-syscall-note.txt" />
+    <Content Include="App_Data\Licenses\LLVM-exception.txt" />
+    <Content Include="App_Data\Licenses\LPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\LPL-1.02.txt" />
+    <Content Include="App_Data\Licenses\LPPL-1.2.txt" />
+    <Content Include="App_Data\Licenses\LPPL-1.3a.txt" />
+    <Content Include="App_Data\Licenses\LPPL-1.3c.txt" />
+    <Content Include="App_Data\Licenses\LZMA-exception.txt" />
+    <Content Include="App_Data\Licenses\mif-exception.txt" />
+    <Content Include="App_Data\Licenses\MirOS.txt" />
+    <Content Include="App_Data\Licenses\MIT-0.txt" />
+    <Content Include="App_Data\Licenses\MIT.txt" />
+    <Content Include="App_Data\Licenses\Motosoto.txt" />
+    <Content Include="App_Data\Licenses\MPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\MPL-1.1.txt" />
+    <Content Include="App_Data\Licenses\MPL-2.0-no-copyleft-exception.txt" />
+    <Content Include="App_Data\Licenses\MPL-2.0.txt" />
+    <Content Include="App_Data\Licenses\MS-PL.txt" />
+    <Content Include="App_Data\Licenses\MS-RL.txt" />
+    <Content Include="App_Data\Licenses\Multics.txt" />
+    <Content Include="App_Data\Licenses\NASA-1.3.txt" />
+    <Content Include="App_Data\Licenses\Naumen.txt" />
+    <Content Include="App_Data\Licenses\NCSA.txt" />
+    <Content Include="App_Data\Licenses\NGPL.txt" />
+    <Content Include="App_Data\Licenses\Nokia-Qt-exception-1.1.txt" />
+    <Content Include="App_Data\Licenses\Nokia.txt" />
+    <Content Include="App_Data\Licenses\NOSL.txt" />
+    <Content Include="App_Data\Licenses\NPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\NPL-1.1.txt" />
+    <Content Include="App_Data\Licenses\NPOSL-3.0.txt" />
+    <Content Include="App_Data\Licenses\NTP.txt" />
+    <Content Include="App_Data\Licenses\OCCT-exception-1.0.txt" />
+    <Content Include="App_Data\Licenses\OCLC-2.0.txt" />
+    <Content Include="App_Data\Licenses\ODbL-1.0.txt" />
+    <Content Include="App_Data\Licenses\OFL-1.0.txt" />
+    <Content Include="App_Data\Licenses\OFL-1.1.txt" />
+    <Content Include="App_Data\Licenses\OGTSL.txt" />
+    <Content Include="App_Data\Licenses\OLDAP-2.3.txt" />
+    <Content Include="App_Data\Licenses\OLDAP-2.7.txt" />
+    <Content Include="App_Data\Licenses\OpenJDK-assembly-exception-1.0.txt" />
+    <Content Include="App_Data\Licenses\OpenSSL.txt" />
+    <Content Include="App_Data\Licenses\openvpn-openssl-exception.txt" />
+    <Content Include="App_Data\Licenses\OSET-PL-2.1.txt" />
+    <Content Include="App_Data\Licenses\OSL-1.0.txt" />
+    <Content Include="App_Data\Licenses\OSL-1.1.txt" />
+    <Content Include="App_Data\Licenses\OSL-2.0.txt" />
+    <Content Include="App_Data\Licenses\OSL-2.1.txt" />
+    <Content Include="App_Data\Licenses\OSL-3.0.txt" />
+    <Content Include="App_Data\Licenses\PHP-3.0.txt" />
+    <Content Include="App_Data\Licenses\PHP-3.01.txt" />
+    <Content Include="App_Data\Licenses\PostgreSQL.txt" />
+    <Content Include="App_Data\Licenses\PS-or-PDF-font-exception-20170817.txt" />
+    <Content Include="App_Data\Licenses\Python-2.0.txt" />
+    <Content Include="App_Data\Licenses\QPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\Qt-GPL-exception-1.0.txt" />
+    <Content Include="App_Data\Licenses\Qt-LGPL-exception-1.1.txt" />
+    <Content Include="App_Data\Licenses\Qwt-exception-1.0.txt" />
+    <Content Include="App_Data\Licenses\RPL-1.1.txt" />
+    <Content Include="App_Data\Licenses\RPL-1.5.txt" />
+    <Content Include="App_Data\Licenses\RPSL-1.0.txt" />
+    <Content Include="App_Data\Licenses\RSCPL.txt" />
+    <Content Include="App_Data\Licenses\Ruby.txt" />
+    <Content Include="App_Data\Licenses\SGI-B-2.0.txt" />
+    <Content Include="App_Data\Licenses\SimPL-2.0.txt" />
+    <Content Include="App_Data\Licenses\SISSL.txt" />
+    <Content Include="App_Data\Licenses\Sleepycat.txt" />
+    <Content Include="App_Data\Licenses\SMLNJ.txt" />
+    <Content Include="App_Data\Licenses\SPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\u-boot-exception-2.0.txt" />
+    <Content Include="App_Data\Licenses\Unlicense.txt" />
+    <Content Include="App_Data\Licenses\UPL-1.0.txt" />
+    <Content Include="App_Data\Licenses\Vim.txt" />
+    <Content Include="App_Data\Licenses\VSL-1.0.txt" />
+    <Content Include="App_Data\Licenses\W3C.txt" />
+    <Content Include="App_Data\Licenses\Watcom-1.0.txt" />
+    <Content Include="App_Data\Licenses\WTFPL.txt" />
+    <Content Include="App_Data\Licenses\WxWindows-exception-3.1.txt" />
+    <Content Include="App_Data\Licenses\X11.txt" />
+    <Content Include="App_Data\Licenses\XFree86-1.1.txt" />
+    <Content Include="App_Data\Licenses\xinetd.txt" />
+    <Content Include="App_Data\Licenses\Xnet.txt" />
+    <Content Include="App_Data\Licenses\YPL-1.1.txt" />
+    <Content Include="App_Data\Licenses\Zend-2.0.txt" />
+    <Content Include="App_Data\Licenses\Zimbra-1.3.txt" />
+    <Content Include="App_Data\Licenses\Zlib.txt" />
+    <Content Include="App_Data\Licenses\ZPL-2.0.txt" />
+    <Content Include="App_Data\Licenses\ZPL-2.1.txt" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac.Mvc5">
+      <Version>4.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="MicroBuild.Core">
+      <Version>0.3.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.Web">
+      <Version>2.12.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Mvc">
+      <Version>5.2.6</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Web.Optimization">
+      <Version>1.1.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="NuGet.Packaging">
+      <Version>5.0.0-preview1.5665</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog">
+      <Version>2.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Extensions.Logging">
+      <Version>3.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Sinks.ApplicationInsights">
+      <Version>3.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="WebGrease">
+      <Version>1.6.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationInsights.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\License\DisplayLicense.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\License\UnknownLicense.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\License\InvalidRequest.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\License\CompositeLicenseExpression.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <SignPath>..\..\build</SignPath>
+    <SignPath Condition="'$(BUILD_SOURCESDIRECTORY)' != ''">$(BUILD_SOURCESDIRECTORY)\build</SignPath>
+    <SignPath Condition="'$(NuGetBuildPath)' != ''">$(NuGetBuildPath)</SignPath>
+    <SignType Condition="'$(SignType)' == ''">none</SignType>
+  </PropertyGroup>
+  <Import Project="$(SignPath)\sign.targets" Condition="Exists('$(SignPath)\sign.targets')" />
+  <ItemGroup>
+    <ThirdPartyBinaries Include="Antlr3.Runtime.dll" Visible="false" />
+    <ThirdPartyBinaries Include="Autofac.dll" Visible="false" />
+    <ThirdPartyBinaries Include="Autofac.Integration.Mvc.dll" Visible="false" />
+    <ThirdPartyBinaries Include="Newtonsoft.Json.dll" Visible="false" />
+    <ThirdPartyBinaries Include="Serilog.dll" Visible="false" />
+    <ThirdPartyBinaries Include="Serilog.Extensions.Logging.dll" Visible="false" />
+    <ThirdPartyBinaries Include="Serilog.Sinks.ApplicationInsights.dll" Visible="false" />
+  </ItemGroup>
+  <Import Project="$(SignPath)\sign.microbuild.targets" Condition="Exists('$(SignPath)\sign.microbuild.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13135</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:13135/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

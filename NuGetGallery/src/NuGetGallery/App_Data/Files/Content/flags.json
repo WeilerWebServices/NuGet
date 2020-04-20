@@ -1,0 +1,51 @@
+{
+  "Features": {
+    "NuGetGallery.Typosquatting": "Enabled",
+    "NuGetGallery.PackagesAtomFeed": "Enabled",
+    "NuGetGallery.PreviewHijack": "Enabled",
+    "NuGetGallery.GravatarProxy": "Enabled",
+    "NuGetGallery.GravatarProxyEnSubdomain": "Enabled",
+    "NuGetGallery.ODataCacheDurations": "Enabled",
+    "NuGetGallery.ShowEnable2FADialog": "Enabled",
+    "NuGetGallery.Get2FADismissFeedback": "Disabled",
+    "NuGetGallery.UsabillaEveryPage": "Enabled"
+  },
+  "Flights": {
+    "NuGetGallery.TyposquattingFlight": {
+      "All": true,
+      "SiteAdmins": false,
+      "Accounts": [],
+      "Domains": []
+    },
+    "NuGetGallery.ManageDeprecation": {
+      "All": false,
+      "SiteAdmins": true,
+      "Accounts": [],
+      "Domains": []
+    },
+    "NuGetGallery.SearchSideBySide": {
+      "All": true,
+      "SiteAdmins": false,
+      "Accounts": [],
+      "Domains": []
+    },
+    "NuGetGallery.GitHubUsage": {
+      "All": false,
+      "SiteAdmins": false,
+      "Accounts": [],
+      "Domains": []
+    },
+    "NuGetGallery.ABTesting": {
+      "All": true,
+      "SiteAdmins": false,
+      "Accounts": [],
+      "Domains": []
+    },
+    "NuGetGallery.ManageDeprecationApi": {
+      "All": false,
+      "SiteAdmins": true,
+      "Accounts": [],
+      "Domains": []
+    }
+  }
+}

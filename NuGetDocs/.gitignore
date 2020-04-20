@@ -1,0 +1,27 @@
+# Build output
+site/Bin/
+site/Obj/
+bin/
+obj/
+# packages/ - Gonna see if things work better with packages included
+
+# User files
+*.user
+*.suo
+*.sln.cache
+*.sln.ide
+*.vs10x
+*.psess
+*.docstates
+_ReSharper*
+
+# Test Results
+*.results.xml
+TestResults/
+PrecompiledWeb/
+
+# Other
+*.bak
+App_Data/
+[Tt]humbs.db
+/packages

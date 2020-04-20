@@ -1,0 +1,53 @@
+{
+  "name": "setup-nuget-exe",
+  "version": "1.0.2",
+  "private": true,
+  "description": "Download and install NuGet.exe for use in GitHub Actions.",
+  "main": "lib/main.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
+    "format": "prettier --write src/**/*.ts",
+    "format-check": "prettier --check src/**/*.ts",
+    "test": "jest --coverage",
+    "update-deps": "npm prune --production && git add -f node_modules/* && git commit -m \"deps: update node modules\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuget/setup-nuget-exe.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
+  "author": "Microsoft",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.0.0",
+    "@actions/exec": "^1.0.1",
+    "@actions/io": "^1.0.1",
+    "@actions/tool-cache": "^1.1.2",
+    "semver": "^6.3.0",
+    "typed-rest-client": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.12.7",
+    "@types/semver": "^6.2.0",
+    "husky": "^3.0.9",
+    "jest": "^24.8.0",
+    "jest-circus": "^24.7.1",
+    "mode-to-permissions": "0.0.2",
+    "nock": "^11.7.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.7.2"
+  },
+  "husky": {
+    "skipCI": true,
+    "hooks": {
+      "pre-commit": "npm run build && npm run format && git add lib src"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+﻿{
+    "version": 3,
+    "mirrors": [ ],
+    "services": {
+        "search": "/search",
+        "work": "/work",
+        "v2feed": "/api/v2/"
+    }
+}

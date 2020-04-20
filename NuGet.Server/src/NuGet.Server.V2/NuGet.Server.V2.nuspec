@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package>
+  <metadata minClientVersion="2.6">
+    <id>$id$</id>
+    <version>$version$</version>
+    <description>$description$</description>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <license type="expression">Apache-2.0</license>
+    <projectUrl>https://github.com/NuGet/NuGet.Server</projectUrl>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <repository type="git" url="https://github.com/NuGet/NuGet.Server" />
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Data.Services" targetFramework="net46" />
+    </frameworkAssemblies>
+    <dependencies>
+      <group targetFramework="net46">
+        <dependency id="Microsoft.Web.Xdt" version="2.1.1" />
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+        <dependency id="NuGet.Core" version="2.14.0" />
+        <dependency id="NuGet.Server.Core" version="$version$" />
+
+        <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.3" />
+        <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
+        <dependency id="Microsoft.AspNet.WebApi.OData" version="5.7.0" />
+        <dependency id="Microsoft.Data.Edm" version="5.8.4" />
+        <dependency id="Microsoft.Data.OData" version="5.8.4" />
+        <dependency id="System.Spatial" version="5.8.4" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

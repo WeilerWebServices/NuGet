@@ -1,0 +1,7 @@
+<FileList>
+  <File Reference="NativePackage.winmd">
+    <ToolboxItems VSCategory="Native Package" BlendCategory="Native Package">
+      <Item Type="NativePackage.MyCustomControl" />
+    </ToolboxItems>
+  </File>
+</FileList>

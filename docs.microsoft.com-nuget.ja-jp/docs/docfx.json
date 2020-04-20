@@ -1,0 +1,71 @@
+{
+  "build": {
+    "markdownEngineName": "markdig",
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/**.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "nuget/**",
+          "**/includes/**",
+          "archive/config-priority-order.md",
+          "archive/readme.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg",
+          "**/*.svg",
+          "**/*.json",
+          "**/*.xml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "nuget/**",
+          "**/includes/**"
+        ]
+      }
+    ],
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+      "feedback_system": "GitHub",
+      "feedback_github_repo": "NuGet/docs.microsoft.com-nuget.ja-jp",
+      "feedback_product_url": "https://github.com/NuGet/Home/issues/",
+      "breadcrumb_path": "~/_breadcrumb/toc.yml",
+      "ROBOTS": "INDEX,FOLLOW",
+      "ms.topic": "conceptual",
+      "ms.prod": "nuget",
+      "author": "karann-msft",
+      "ms.author": "karann",
+      "ms.reviewer": [
+        "karann",
+        "unnir"
+      ],
+      "ms.workload": [
+        "dotnet",
+        "dotnetcore",
+        "aspnet"
+      ],
+      "searchScope": [
+        "NuGet"
+      ],
+      "uhfHeaderId": "MSDocsHeader-NuGet",
+      "disable_contribution_on_translation_quality": [
+        "MT",
+        "MTE75",
+        "MTE95",
+        "Blank"
+      ]
+    },
+    "fileMetadata": {},
+    "template": [],
+    "dest": "nuget"
+  }
+}
